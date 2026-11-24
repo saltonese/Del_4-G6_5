@@ -22,3 +22,16 @@ class Fraction:
         divisor = gcd(numerator, denominator)
         self._numerator = numerator // divisor
         self._denominator = denominator // divisor
+
+#----------------------------------------------------------------------------
+# Read-only attributes
+#--------------------------------------------------------------------------------
+
+@property
+def numerator(self):
+    return self._numerator
+
+@property
+def denominator(self):
+    return self._denominator
+
