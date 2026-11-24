@@ -2,6 +2,7 @@
 
 from math import gcd #greatest commom denominator
 
+
 class Fraction:
     """An imutable fraction numerator/denominatior
     
@@ -14,7 +15,6 @@ class Fraction:
             # bool is a subclass of int in pyhton, so we exclude it
             if isinstance(part, bool) or not isinstance(part, int):
                 raise TypeError(f"{name} must be an integer, got {type(part).__name__}")
-
             if denominator <= 0:
                 raise ValueError("denominator msut be more than 0 (X > 0)")
 
@@ -23,9 +23,9 @@ class Fraction:
         self._numerator = numerator // divisor
         self._denominator = denominator // divisor
 
-#----------------------------------------------------------------------------
-# Read-only attributes
-#--------------------------------------------------------------------------------
+    #----------------------------------------------------------------------------
+    # Read-only attributes
+    #--------------------------------------------------------------------------------
     @property
     def numerator(self):
         return self._numerator
@@ -34,9 +34,9 @@ class Fraction:
     def denominator(self):
         return self._denominator
 
-#-----------------------------------------------------------------------------
-# String repersentaions
-#----------------------------------------------------------------------
+    #-----------------------------------------------------------------------------
+    # String repersentaions
+    #----------------------------------------------------------------------
     def __repr__(self):
         return f"fraction({self._numerator}, {self._denominator})"
 
@@ -45,6 +45,45 @@ class Fraction:
             return str(self._numerator)
         return f"{self._numerator} / {self._denominator}"
 
+    #---------------------------------------------------------------------
+    # Comparisons. Cross-multiplication avoids floating point entierly:
+    #   a/b < c/d  <=>  a*b < c*d   (valid beacuse b, d > 0)
+    # This is why the denominator must be positive: multipying an inequality
+    # with a negative number would flip its dirction
+    # -----------------------------------------------------------
+    def __eq__(self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        return self._numerator * other._denominator == other._numerator * self._denominator
 
+    def __ne__(self, other):
+        result = self.__eq__(other)
+        return result if result is NotImplemented else not result
+
+    def __lt__(self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        return self._numerator * other._denominator < other._numerator * self._denominator
+
+    def __le__ (self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        return self._numerator * other._denominator <= other._numerator * self._denominator
+
+    def __gt__(self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        return self._numerator * other._denominator > other._numerator * self._denominator
+
+    def __ge__(self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        return self._numerator * other._denominator >= other._numerator * self._denominator
+
+    #--------------------------------------------------------------------
+    # arithmetic
+    #---------------------------------------------------------------------
+    def __add__(self, other):
+        if
     
 
