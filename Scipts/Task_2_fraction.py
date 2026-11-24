@@ -1,3 +1,4 @@
+
 """A Fraction class with comparionsn and arithmatic via special methods """
 
 from math import gcd #greatest commom denominator
@@ -88,7 +89,7 @@ class Fraction:
             return NotImplemented
         return Fraction(
             self._numerator * other._denominator + other._numerator * self._denominator,
-            self._denominator * other._ denominator,
+            self._denominator * other._denominator,
         )
 
     def __sub__(self, other):
@@ -124,6 +125,17 @@ class Fraction:
 
     def __abs__(self):
         return Fraction(abs(self._numerator), self._denominator)
+
+    #----------------------------------------------------------
+    # conversion and hashing
+    #------------------------------------------------
+    def __float__(self):
+        return self._numerator / self._denominator
+
+    def __hash__(self):
+        #Safe here because fractions are in lowest terms:
+        # equal fractions always have identical (num, den) pairs
+        return hash((self._numerator, self._denominator))
     
     
 
