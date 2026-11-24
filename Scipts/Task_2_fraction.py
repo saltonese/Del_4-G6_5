@@ -84,6 +84,46 @@ class Fraction:
     # arithmetic
     #---------------------------------------------------------------------
     def __add__(self, other):
-        if
+        if not isinstance (other, Fraction):
+            return NotImplemented
+        return Fraction(
+            self._numerator * other._denominator + other._numerator * self._denominator,
+            self._denominator * other._ denominator,
+        )
+
+    def __sub__(self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        return Fraction(
+            self._numerator * other._denominator - other._numerator * self._denominator,
+            self._denominator * other._denominator,
+        )
+
+    def __mul__ (self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        return Fraction(
+            self._numerator * other._numerator,
+            self._denominator * other._denominator
+        )
+
+    def __truediv__(self, other):
+        if not isinstance(other, Fraction):
+            return NotImplemented
+        if other._denominator == 0:
+            raise ZeroDivisionError("divison by a fraction equal to 0")
+        numerator = self._numerator * other._denominator
+        denominator =  self._denominator * other._numerator
+        # the sign must live in the numerator, since the denominator has to be > 0
+        if denominator < 0:
+            numerator, denominator = -numerator, -denominator
+        return Fraction(numerator, denominator)
+
+    def __neg__(self):
+        return Fraction(-self._numerator, self._denominator)
+
+    def __abs__(self):
+        return Fraction(abs(self._numerator), self._denominator)
+    
     
 
