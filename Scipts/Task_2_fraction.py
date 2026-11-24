@@ -26,12 +26,25 @@ class Fraction:
 #----------------------------------------------------------------------------
 # Read-only attributes
 #--------------------------------------------------------------------------------
+    @property
+    def numerator(self):
+        return self._numerator
 
-@property
-def numerator(self):
-    return self._numerator
+    @property
+    def denominator(self):
+        return self._denominator
 
-@property
-def denominator(self):
-    return self._denominator
+#-----------------------------------------------------------------------------
+# String repersentaions
+#----------------------------------------------------------------------
+    def __repr__(self):
+        return f"fraction({self._numerator}, {self._denominator})"
+
+    def __str__(self):
+        if self._denominator == 1:
+            return str(self._numerator)
+        return f"{self._numerator} / {self._denominator}"
+
+
+    
 
