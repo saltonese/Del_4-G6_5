@@ -46,10 +46,17 @@ class Temperature:
             return f"{self.value:.2f}°{self.unit.upper()}"
         elif self.unit.upper() == "K":
             return f"{self.value:.2f} {self.unit.upper()}"
+
+
+
+
             
     def __eq__(self, other):
         if isinstance(other, Temperature):
             return self.to_celsius() == other.to_celsius()
         return NotImplemented
 
-    
+    def __ne__(self, other):
+        if isinstance(other, Temperature):
+            return self.to_celsius() != other.to_celsius()
+        return NotImplemented
