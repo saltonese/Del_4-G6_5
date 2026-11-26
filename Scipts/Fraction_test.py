@@ -150,3 +150,8 @@ class TestArithmatic:
          assert abs(Fraction(-3, 4)) == Fraction(3, 4)
          assert abs(Fraction(3, 4)) == Fraction(3, 4)
       
+    @pytest.mark.parametrize("operation", ["+", "-", "*", "/"])
+    def test_arithmetic_with_non_fraction_raises_type_error(self, operation):
+        with pytest.raises(TypeError):
+            eval(f"Fraction(1, 2) {operation} 2")
+
