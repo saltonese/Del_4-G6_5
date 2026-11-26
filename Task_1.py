@@ -37,5 +37,7 @@ class Temperature:
             else:
                 raise ValueError("Invalid unit. Please use 'C', 'F', or 'K'.")
             return Temperature(value, target_unit)
+
+    def __repr__(self) -> str:
+                return f"Temperature({self.value}, '{self.unit}')"
     
-        
