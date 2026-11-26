@@ -28,16 +28,28 @@ class Temperature:
             return self.value
 
     def convert_to(self, target_unit: str) -> Temperature:
-            if target_unit.upper() == 'C':
-                value = self.to_celsius()
-            elif target_unit.upper() == 'F':
-                value = self.to_fahrenheit()
-            elif target_unit.upper() == 'K':
-                value = self.to_kelvin()
-            else:
-                raise ValueError("Invalid unit. Please use 'C', 'F', or 'K'.")
-            return Temperature(value, target_unit)
+        if target_unit.upper() == 'C':
+            value = self.to_celsius()
+        elif target_unit.upper() == 'F':
+            value = self.to_fahrenheit()
+        elif target_unit.upper() == 'K':
+            value = self.to_kelvin()
+        else:
+            raise ValueError("Invalid unit. Please use 'C', 'F', or 'K'.")
+        return Temperature(value, target_unit)
 
     def __repr__(self) -> str:
-                return f"Temperature({self.value}, '{self.unit}')"
+        return f"Temperature({self.value}, '{self.unit}')"
+
+    def __str__(self) -> str:
+        if self.unit.upper() in ("C", "F"):
+            return f"{self.value:.2f}°{self.unit.upper()}"
+        elif self.unit.upper() == "K":
+            return f"{self.value:.2f} {self.unit.upper()}"
+            
+    def __eq__(self, other):
+        if isinstance(other, Temperature):
+            return self.to_celsius() == other.to_celsius()
+        return NotImplemented
+
     
