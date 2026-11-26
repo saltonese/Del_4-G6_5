@@ -115,5 +115,14 @@ class TestStringRepresentations:
 
     def test_str_whole_number(self):
         assert str(Fraction(4, 2)) == "2"
-        
 
+class TestArithmatic:
+    def test_add(self):
+        assert Fraction(1, 2) + Fraction(1, 3) == Fraction(5, 6)
+
+    def test_add_result_is_reduced(self):
+        result = Fraction(1, 2) + Fraction(1, 2)
+        assert (result.numerator, result.denominator) == (1, 1)
+
+    def test_sub(self):
+        assert Fraction(1, 2) - Fraction(3, 4) == Fraction(-1, 4)        
