@@ -159,3 +159,15 @@ class TestArithmatic:
         a, b = Fraction(1, 2), Fraction(1, 3)
         _ = a + b
         assert a == Fraction(1, 2) and b == Fraction(1, 3)
+
+class TestConversionAndHashing:
+    def test_float(self):
+        assert float(Fraction(1,4)) == 0.25
+        assert float(Fraction(-3, 2)) == -1.5
+
+    def test_equal_fractions_have_equal_hashes(self):
+        assert hash(Fraction(1, 2)) == hash(Fraction(2, 4))
+
+    def test_usable_in_sets_and_as_dict_keys(self):
+        assert len({Fraction(1, 2), Fraction(2, 4), Fraction(1, 3)}) == 2
+        assert {Fraction(1, 2): "half"}[Fraction(3, 6)] == "half"
