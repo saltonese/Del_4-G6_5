@@ -53,10 +53,17 @@ class Temperature:
             
     def __eq__(self, other):
         if isinstance(other, Temperature):
-            return self.to_celsius() == other.to_celsius()
+            temp1 = self.to_celsius()
+            temp2 = other.to_celsius()
+            if abs(temp1 - temp2) < 1e-9:
+                return True
+            else:
+                return False
         return NotImplemented
 
     def __ne__(self, other):
         if isinstance(other, Temperature):
-            return self.to_celsius() != other.to_celsius()
+            temp1 = self.to_celsius()
+            temp2 = other.to_celsius()
+            return abs(temp1 - temp2) >= 1e-9
         return NotImplemented
