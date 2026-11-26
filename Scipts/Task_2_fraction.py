@@ -16,8 +16,8 @@ class Fraction:
             # bool is a subclass of int in pyhton, so we exclude it
             if isinstance(part, bool) or not isinstance(part, int):
                 raise TypeError(f"{name} must be an integer, got {type(part).__name__}")
-            if denominator <= 0:
-                raise ValueError("denominator msut be more than 0 (X > 0)")
+        if denominator <= 0:
+            raise ValueError("denominator must be more than 0 (X > 0)")
 
         # reduce to lowest terms. gcd is always >= 1 because denominator > 0
         divisor = gcd(numerator, denominator)
@@ -39,12 +39,12 @@ class Fraction:
     # String repersentaions
     #----------------------------------------------------------------------
     def __repr__(self):
-        return f"fraction({self._numerator}, {self._denominator})"
+        return f"Fraction({self._numerator}, {self._denominator})"
 
     def __str__(self):
         if self._denominator == 1:
             return str(self._numerator)
-        return f"{self._numerator} / {self._denominator}"
+        return f"{self._numerator}/{self._denominator}"
 
     #---------------------------------------------------------------------
     # Comparisons. Cross-multiplication avoids floating point entierly:
@@ -111,7 +111,7 @@ class Fraction:
     def __truediv__(self, other):
         if not isinstance(other, Fraction):
             return NotImplemented
-        if other._denominator == 0:
+        if other._numerator == 0:
             raise ZeroDivisionError("divison by a fraction equal to 0")
         numerator = self._numerator * other._denominator
         denominator =  self._denominator * other._numerator
