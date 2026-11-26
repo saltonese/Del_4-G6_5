@@ -96,7 +96,16 @@ class TestComparisons:
     def test_sorting_uses_comparisons(self):
         fractions = [Fraction(3, 4), Fraction(-1, 2), Fraction(1, 3), Fraction(1, 2)]
         assert sorted(fractions) == [Fraction(-1, 2), Fraction(1, 3), Fraction(1, 2), Fraction(3, 4)]
-        
 
-    
+#--------------------------------------------------------------------
+# Other special methods
+#-------------------------------------------------------------------
+
+class TestStringRepresentations:
+    def test_repr(self):
+        assert repr(Fraction(3, 4)) == "Fraction(3, 4)"
+
+    def test_repr_is_unambigious(self):
+        f = Fraction(-5, 8)
+        assert eval(repr(f)) == f
 

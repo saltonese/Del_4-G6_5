@@ -39,7 +39,7 @@ class Fraction:
     # String repersentaions
     #----------------------------------------------------------------------
     def __repr__(self):
-        return f"fraction({self._numerator}, {self._denominator})"
+        return f"Fraction({self._numerator}, {self._denominator})"
 
     def __str__(self):
         if self._denominator == 1:
