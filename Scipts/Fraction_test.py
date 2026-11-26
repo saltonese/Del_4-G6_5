@@ -48,3 +48,19 @@ class TestInitialiser:
         with pytest.raises(AttributeError):
             f.denominator = 3
 
+#----------------------------------------------------------------
+# Compariosns
+#----------------------------------------------------------------
+
+class TestComparisons:
+    def test_equal(self):
+        assert Fraction(1, 2) == Fraction (2, 4)
+        assert Fraction(0, 3) == Fraction (0, 5)
+        assert not (Fraction(1, 2) == Fraction (2, 4))
+
+    def test_not_equal(self):
+        assert Fraction(1, 2) != Fraction (1, 3)
+        assert not Fraction(1, 2) != Fraction (2, 4)
+
+    
+
