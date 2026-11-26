@@ -136,4 +136,17 @@ class TestArithmatic:
     def test_truediv_by_negative_keeps_denominator_positive(self):
         result = Fraction(1, 2) / Fraction(-1, 4)
         assert result == Fraction(-2, 1)
-        assert result.denominator > 0             
+        assert result.denominator > 0           
+    
+    def test_truediv_by_zero_raises(self):
+        with pytest.raises(ZeroDivisionError):
+            Fraction(1, 2) / Fraction(0, 5)
+ 
+    def test_neg(self):
+         assert -Fraction(1, 2) == Fraction(-1, 2)
+         assert -Fraction(-1, 2) == Fraction(1, 2)
+ 
+    def test_abs(self):
+         assert abs(Fraction(-3, 4)) == Fraction(3, 4)
+         assert abs(Fraction(3, 4)) == Fraction(3, 4)
+      
