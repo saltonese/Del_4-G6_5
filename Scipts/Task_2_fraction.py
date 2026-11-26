@@ -111,7 +111,7 @@ class Fraction:
     def __truediv__(self, other):
         if not isinstance(other, Fraction):
             return NotImplemented
-        if other._denominator == 0:
+        if other._numerator == 0:
             raise ZeroDivisionError("divison by a fraction equal to 0")
         numerator = self._numerator * other._denominator
         denominator =  self._denominator * other._numerator
