@@ -27,4 +27,15 @@ class Temperature:
         if self.unit.upper() == 'K':
             return self.value
 
+    def convert_to(self, target_unit: str) -> Temperature:
+            if target_unit.upper() == 'C':
+                value = self.to_celsius()
+            elif target_unit.upper() == 'F':
+                value = self.to_fahrenheit()
+            elif target_unit.upper() == 'K':
+                value = self.to_kelvin()
+            else:
+                raise ValueError("Invalid unit. Please use 'C', 'F', or 'K'.")
+            return Temperature(value, target_unit)
     
+        
