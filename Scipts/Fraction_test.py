@@ -155,3 +155,7 @@ class TestArithmatic:
         with pytest.raises(TypeError):
             eval(f"Fraction(1, 2) {operation} 2")
 
+    def test_operations_return_new_objects(self):
+        a, b = Fraction(1, 2), Fraction(1, 3)
+        _ = a + b
+        assert a == Fraction(1, 2) and b == Fraction(1, 3)
