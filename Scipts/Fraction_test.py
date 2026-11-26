@@ -56,11 +56,22 @@ class TestComparisons:
     def test_equal(self):
         assert Fraction(1, 2) == Fraction (2, 4)
         assert Fraction(0, 3) == Fraction (0, 5)
-        assert not (Fraction(1, 2) == Fraction (2, 4))
+        assert not (Fraction(1, 2) == Fraction (1, 3))
 
     def test_not_equal(self):
         assert Fraction(1, 2) != Fraction (1, 3)
-        assert not Fraction(1, 2) != Fraction (2, 4)
+        assert not (Fraction(1, 2) != Fraction (2, 4))
+
+    def test_less_than(self):
+        assert Fraction(1, 3) < Fraction (1, 2)
+        assert Fraction(-1, 2) < Fraction (-1, 3)
+        assert Fraction(-1, 2) < Fraction (1, 100)
+        assert not (Fraction(1, 2) < Fraction (2, 4))
+
+    def test_less_than_or_equal(self):
+        assert Fraction(1, 3) <= Fraction(1, 2)
+        assert Fraction(2, 4) <= Fraction(1, 2)
+        assert not (Fraction(2, 3) <= Fraction(1, 2))
 
     
 
