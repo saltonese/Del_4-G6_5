@@ -93,5 +93,10 @@ class TestComparisons:
         with pytest.raises(TypeError):
             f >= "1/2"
 
+    def test_sorting_uses_comparisons(self):
+        fractions = [Fraction(3, 4), Fraction(-1, 2), Fraction(1, 3), Fraction(1, 2)]
+        assert sorted(fractions) == [Fraction(-1, 2), Fraction(1, 3), Fraction(1, 2), Fraction(3, 4)]
+        
+
     
 
