@@ -1,3 +1,6 @@
+from operator import __lt__
+
+
 class Temperature:
     def __init__(self, value, unit):
         self.value = value
@@ -46,10 +49,6 @@ class Temperature:
             return f"{self.value:.2f}°{self.unit.upper()}"
         elif self.unit.upper() == "K":
             return f"{self.value:.2f} {self.unit.upper()}"
-
-
-
-
             
     def __eq__(self, other):
         if isinstance(other, Temperature):
@@ -65,5 +64,25 @@ class Temperature:
         if isinstance(other, Temperature):
             temp1 = self.to_celsius()
             temp2 = other.to_celsius()
-            return abs(temp1 - temp2) >= 1e-9
+            if abs(temp1 - temp2) >= 1e-9:
+                return True
+            else:
+                return False
         return NotImplemented
+
+    def __lt__(self, other):
+        if isinstance(other, Temperature):
+            temp1 = self.to_celsius()
+            temp2 = other.to_celsius()
+            if temp1 - temp2 < -1e-9:
+                return True
+            else:
+                return False
+        return NotImplemented
+            
+    def __le__(self, other):
+        if isinstance(other, Temperature):
+            return self.__lt__(other) or self.__eq__(other)
+        return NotImplemented
+
+    
