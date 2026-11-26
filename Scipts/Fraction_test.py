@@ -48,10 +48,10 @@ class TestInitialiser:
         with pytest.raises(AttributeError):
             f.denominator = 3
 
+
 #----------------------------------------------------------------
 # Compariosns
 #----------------------------------------------------------------
-
 class TestComparisons:
     def test_equal(self):
         assert Fraction(1, 2) == Fraction (2, 4)
@@ -97,10 +97,10 @@ class TestComparisons:
         fractions = [Fraction(3, 4), Fraction(-1, 2), Fraction(1, 3), Fraction(1, 2)]
         assert sorted(fractions) == [Fraction(-1, 2), Fraction(1, 3), Fraction(1, 2), Fraction(3, 4)]
 
+
 #--------------------------------------------------------------------
 # Other special methods
 #-------------------------------------------------------------------
-
 class TestStringRepresentations:
     def test_repr(self):
         assert repr(Fraction(3, 4)) == "Fraction(3, 4)"
@@ -115,6 +115,7 @@ class TestStringRepresentations:
 
     def test_str_whole_number(self):
         assert str(Fraction(4, 2)) == "2"
+
 
 class TestArithmatic:
     def test_add(self):
@@ -159,6 +160,7 @@ class TestArithmatic:
         a, b = Fraction(1, 2), Fraction(1, 3)
         _ = a + b
         assert a == Fraction(1, 2) and b == Fraction(1, 3)
+
 
 class TestConversionAndHashing:
     def test_float(self):
