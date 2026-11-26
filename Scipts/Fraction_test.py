@@ -109,3 +109,11 @@ class TestStringRepresentations:
         f = Fraction(-5, 8)
         assert eval(repr(f)) == f
 
+    def test_str(self):
+        assert str(Fraction(3, 4)) == "3/4"
+        assert str(Fraction(-3, 4)) == "-3/4"
+
+    def test_str_whole_number(self):
+        assert str(Fraction(4, 2)) == "2"
+        
+

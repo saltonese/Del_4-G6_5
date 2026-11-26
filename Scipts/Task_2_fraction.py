@@ -44,7 +44,7 @@ class Fraction:
     def __str__(self):
         if self._denominator == 1:
             return str(self._numerator)
-        return f"{self._numerator} / {self._denominator}"
+        return f"{self._numerator}/{self._denominator}"
 
     #---------------------------------------------------------------------
     # Comparisons. Cross-multiplication avoids floating point entierly:
