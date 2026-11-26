@@ -83,5 +83,15 @@ class TestComparisons:
         assert Fraction(1, 2) >= Fraction(2, 4)
         assert not (Fraction(1, 3) >= Fraction(1, 2))
 
+    def test_comperison_with_non_fraction(self):
+        f = Fraction(1, 2)
+        assert f.__eq__(0.5) is NotImplemented
+        assert (f == 0.5) is False
+        assert (f != 0.5) is True
+        with pytest.raises(TypeError):
+            f < 1
+        with pytest.raises(TypeError):
+            f >= "1/2"
+
     
 
