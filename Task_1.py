@@ -1,11 +1,20 @@
-from operator import __lt__
-
-
 class Temperature:
-    def __init__(self, value, unit):
-        self.value = value
-        self.unit = unit
+    def __init__(self, value, unit="C"):
+        if unit.upper() not in ("C", "F", "K"):
+            raise ValueError("Invalid unit. Use C, F or K.")
+        self._value = float(value)
+        self._unit = unit.upper()
+        if self.to_kelvin() < 0:
+            raise ValueError("Temperature cannot be below absolute zero.")
 
+    @property
+    def value(self):
+        return self._value
+
+    @property
+    def unit(self):
+        return self._unit
+    
     def to_celsius(self) -> float:
         if self.unit.upper() == 'C':
             return self.value
@@ -46,7 +55,7 @@ class Temperature:
 
     def __str__(self) -> str:
         if self.unit.upper() in ("C", "F"):
-            return f"{self.value:.2f}°{self.unit.upper()}"
+            return f"{self.value:.2f} °{self.unit.upper()}"
         elif self.unit.upper() == "K":
             return f"{self.value:.2f} {self.unit.upper()}"
             
@@ -85,4 +94,17 @@ class Temperature:
             return self.__lt__(other) or self.__eq__(other)
         return NotImplemented
 
-    
+    def __gt__(self, other):
+        if isinstance(other, Temperature):
+            temp1 = self.to_celsius()
+            temp2 = other.to_celsius()
+            if temp1 - temp2 > 1e-9:
+                return True
+            else:
+                return False
+        return NotImplemented
+
+    def __ge__(self, other):
+        if isinstance(other, Temperature):
+            return self.__gt__(other) or self.__eq__(other)
+        return NotImplemented
