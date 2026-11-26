@@ -125,4 +125,15 @@ class TestArithmatic:
         assert (result.numerator, result.denominator) == (1, 1)
 
     def test_sub(self):
-        assert Fraction(1, 2) - Fraction(3, 4) == Fraction(-1, 4)        
+        assert Fraction(1, 2) - Fraction(3, 4) == Fraction(-1, 4)   
+
+    def test_mul (self):
+        assert Fraction(2, 3) * Fraction(3, 4) == Fraction(1, 2)
+
+    def test_truediv(self):
+        assert Fraction(1, 2) / Fraction(3, 4) == Fraction(2, 3)
+
+    def test_truediv_by_negative_keeps_denominator_positive(self):
+        result = Fraction(1, 2) / Fraction(-1, 4)
+        assert result == Fraction(-2, 1)
+        assert result.denominator > 0             
