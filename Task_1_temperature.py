@@ -109,27 +109,3 @@ class Temperature:
             return self.__gt__(other) or self.__eq__(other)
         return NotImplemented
 
-
-
-
-"""
-a = Temperature(0, "C")
-b = Temperature(32, "F")
-c = Temperature(273.15, "K")
-
-# Likhet
-print(a == b)
-print(b == c)
-
-# Ordering
-print(a < Temperature(10, "C"))
-print(a > Temperature(-10, "C"))
-
-# Read-only
-a_value = 10
-
-# Ugyldig enhet
-Temperature(20, "f")
-"""
-
-
