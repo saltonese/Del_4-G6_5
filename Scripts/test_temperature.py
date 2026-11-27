@@ -1,5 +1,5 @@
 import pytest
-from Scripts.Task_1_temperature import Temperature
+from Task_1_temperature import Temperature
 
 
 
