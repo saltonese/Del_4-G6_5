@@ -38,15 +38,40 @@ def test_absolute_zero():
 
 # Conversions
 
-def test_conversions():
-    temp_c = Temperature(-273.15, "C")
-    temp_f = Temperature(-459.67, "F")
-    temp_k = Temperature(0, "K")
+@pytest.mark.parametrize("value, unit, expected", [
+    (-273.15, "C", 0),
+    (-40, "C", -40),
+    (0, "C", 32),
+    (37, "C", 98.6),
+    (100, "C", 212)
+])
+def test_fahrenheit_conversion(value, unit, expected):
+    temp = Temperature(value, unit)
+    assert temp.to_fahrenheit() == pytest.approx(expected, abs=1e-9)
 
-
-
+@pytest.mark.parametrize("value, unit, expected", [
+    (),
+    (),
+    (),
+    (),
+    ()
+])
+def test_fahrenheit_conversion(value, unit, expected):
+    temp = Temperature(value, unit)
+    assert temp.to_fahrenheit() == pytest.approx(expected, abs=1e-9)
 
     
+@pytest.mark.parametrize("value, unit, expected", [
+    (),
+    (),
+    (),
+    (),
+    ()
+])
+def test_fahrenheit_conversion(value, unit, expected):
+    temp = Temperature(value, unit)
+    assert temp.to_fahrenheit() == pytest.approx(expected, abs=1e-9)
+
 
 
 
