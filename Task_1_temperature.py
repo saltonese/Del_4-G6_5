@@ -4,7 +4,7 @@ class Temperature:
             raise ValueError("Invalid unit. Use C, F or K.")
         self._value = float(value)
         self._unit = unit.upper()
-        if self.to_kelvin() < 0:
+        if self.to_kelvin() < -1e-9:
             raise ValueError("Temperature cannot be below absolute zero.")
 
     @property
