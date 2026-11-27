@@ -1,5 +1,5 @@
 import pytest
-from Task_1_temperature import Temperature
+from Scripts.Task_1_temperature import Temperature
 
 
 
@@ -109,7 +109,7 @@ def test_str_formatting():
     assert str(temp) == "25.00 °C"
 
 # import pytest
-from Task_1_temperature import Temperature
+from Scripts.Task_1_temperature import Temperature
 
 
 
