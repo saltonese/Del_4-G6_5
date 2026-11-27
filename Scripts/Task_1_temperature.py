@@ -137,7 +137,7 @@ Temperature(20, "f")
 
 
 import pytest
-from Task_1 import Temperature
+from Scripts.Task_1_temperature import Temperature
 
 
 
