@@ -1,0 +1,78 @@
+* 203aed6 - Mathias Gundersen, 6 minutes ago : final changes to NB
+* 83759f3 - Mathias Gundersen, 14 minutes ago : moved programs into scripts folder
+* a05b8f6 - Jakub-M-design, 22 minutes ago : Task_1_temperature and test_temperature codes in notebook
+* bfbc12b - Jakub-M-design, 89 minutes ago : added some final touches to the code for Task_1
+* 7348cc8 - Jakub-M-design, 2 hours ago : implemented the rest of the tests in test_temperature
+* 8b60f0b - Jakub-M-design, 3 hours ago : adding conversions test
+*   ad04aff - Jakub-M-design, 4 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+|\  
+| * c490048 - Mathias Gundersen, 4 hours ago : minor import change
+* | da038e5 - Jakub-M-design, 4 hours ago : Deleating unnessesary code in Task_1
+|/  
+* 3ebee15 - Jakub-M-design, 4 hours ago : moving Task_1_temperature and test_temperature files to scripts folder
+*   10c9708 - Jakub-M-design, 4 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+|\  
+| * f3f3981 - Mathias Gundersen, 5 hours ago : renamed Fraction_test -> test_fraction and made changes accordingly
+| * b84660a - Mathias Gundersen, 5 hours ago : Added a requirements.txt file
+| * b063828 - Mathias Gundersen, 5 hours ago : NB update
+* | 7088316 - Jakub-M-design, 4 hours ago : adding tests for task 1 to test_temperature
+|\| 
+| *   c7d61d9 - Mathias Gundersen, 18 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+| |\  
+| * | 7ac73f5 - Mathias Gundersen, 18 hours ago : Added task_2 and discussion to the NB
+| * | ccdcf9c - Mathias Gundersen, 20 hours ago : corrected typo in folder name
+* | | 673edd3 - Jakub-M-design, 17 hours ago : created and sterted on test_temperature file
+| |/  
+|/|   
+* | 4f9c618 - Jakub-M-design, 20 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+|\| 
+| * 0baa43b - Mathias Gundersen, 20 hours ago : added spacing in script, for easier reading
+| * c838b65 - Mathias Gundersen, 20 hours ago : Added Test for Conversion and Hashing - Tests: float conversions and hashing
+* | adb328b - Jakub-M-design, 20 hours ago : made changes in __init__ with respect to requirements in Task_1
+|/  
+*   bd7d082 - Jakub-M-design, 20 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+|\  
+| * 3f43fb0 - Mathias Gundersen, 20 hours ago : added test for fractions as new objects
+| * 29e3d70 - Mathias Gundersen, 20 hours ago : Added a test for checking arithmetic with non fractions
+| * 7109c21 - Mathias Gundersen, 20 hours ago : corrected mistake in task_2
+| * 2b36705 - Mathias Gundersen, 20 hours ago : added test for: truediv by 0, negative fractions and absoulte values of fractions
+| * 0e5bc2e - Mathias Gundersen, 20 hours ago : added test for mul, truediv and a test for truediv with neg numbers
+| * dbb44c8 - Mathias Gundersen, 21 hours ago : created arthimactic test class: added tests for add, sub and result reduction
+| * 0d951e7 - Mathias Gundersen, 21 hours ago : added test for direct string tanslation
+| * 853b0b1 - Mathias Gundersen, 21 hours ago : added test for strign representations, corrected typo in task_2
+| * a929557 - Mathias Gundersen, 21 hours ago : added test sorting uses comparions - to check "sorted" sorts properly
+| * 107f85a - Mathias Gundersen, 21 hours ago : added comparison with non fraction test
+| * c12f7e4 - Mathias Gundersen, 21 hours ago : Added greater than and greater than or equal test
+| * 8a502ee - Mathias Gundersen, 21 hours ago : Added less than and less than or equal test
+| * 9196620 - Mathias Gundersen, 21 hours ago : started TestCompariosns class to Fraction test. added equal and not equal test
+| * 647bf51 - Mathias Gundersen, 21 hours ago : added fraction tests and corrected if statement in Task_2
+* | 617e662 - Jakub-M-design, 21 hours ago : added __lt__ and __le__ methods to task 1
+|/  
+*   56615e6 - Mathias Gundersen, 22 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+|\  
+| * efd6b85 - Jakub-M-design, 22 hours ago : modifications to code in __eq__ and __ne__
+* | 0f84389 - Mathias Gundersen, 22 hours ago : Added default denominator test
+|/  
+* 24c9bf9 - Jakub-M-design, 22 hours ago : added a __ne__ method to Task_1
+* 4f64db2 - Jakub-M-design, 22 hours ago : added __str__ and __eq__ method in Task_1
+* 6bf2fb3 - Jakub-M-design, 22 hours ago : added __repr__ method in Task_1
+* f99ab01 - Jakub-M-design, 22 hours ago : added convert_to method in Task_1
+*   4a530cb - Mathias Gundersen, 22 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+|\  
+| *   7bf3327 - Jakub-M-design, 22 hours ago : Merge branch 'main' of https://github.com/saltonese/Del_4-G6_5
+| |\  
+| * | 37b946b - Jakub-M-design, 22 hours ago : added to_celsius, to_fahrenheit and to_kelvin methods in Temperature class in Task_1
+* | | 95240ce - Mathias Gundersen, 22 hours ago : Added Fraction_test and started testing fraction class
+| |/  
+|/|   
+* | b87a715 - Mathias Gundersen, 3 days ago : Added conversion and hashing
+* | f84595d - Mathias Gundersen, 3 days ago : added functions for: addidtion, subtraction, multiplication, true devison, negative and absoulte values
+* | 7503e1d - Mathias Gundersen, 3 days ago : Added cross multipliction check to Task_2_ Fractions
+* | d7a6ff4 - Mathias Gundersen, 3 days ago : added string rep to task_2_fractions
+* | 97e3138 - Mathias Gundersen, 3 days ago : Added read only for numerator and denominator
+* | 6016ff1 - Mathias Gundersen, 3 days ago : Created fraction class with numerator, demominator and gcd
+* | 03875f7 - Mathias Gundersen, 3 days ago : Created folders and started task_2_fractions
+|/  
+* 8c577ba - Jakub-M-design, 3 days ago : creating class for "Temperature"
+* 4a5a7bb - Jakub-M-design, 3 days ago : Creating Task_1 file
+* f755d3f - Mathias Gundersen, 3 days ago : Initial commit
